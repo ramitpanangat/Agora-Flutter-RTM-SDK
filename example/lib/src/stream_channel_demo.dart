@@ -108,9 +108,6 @@ class _StreamChannelDemoState extends State<StreamChannelDemo> {
         storage: (event) {
           _addLog('[storage] event: ${event.toJson()}');
         },
-        token: (channelName) {
-          _addLog('[token] channelName: $channelName');
-        },
       );
       await _rtmClient.setParameters('{"rtm.log_filter":2063}');
 
