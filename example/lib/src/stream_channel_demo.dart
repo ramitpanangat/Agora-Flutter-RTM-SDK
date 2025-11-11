@@ -108,6 +108,9 @@ class _StreamChannelDemoState extends State<StreamChannelDemo> {
         storage: (event) {
           _addLog('[storage] event: ${event.toJson()}');
         },
+        token: (event) {
+          _addLog('[token] event: ${event.toJson()}');
+        },
       );
       await _rtmClient.setParameters('{"rtm.log_filter":2063}');
 
@@ -706,7 +709,6 @@ class _StreamChannelDemoState extends State<StreamChannelDemo> {
                       padding: const EdgeInsets.all(16.0),
                       child: Column(
                         children: [
-                          
                           TextField(
                             controller: _customTypeController,
                             decoration: const InputDecoration(
@@ -734,24 +736,24 @@ class _StreamChannelDemoState extends State<StreamChannelDemo> {
                             ),
                           ),
                           ElevatedButton(
-                                  onPressed: _isTopicJoined &&
-                                          _isLoggedIn &&
-                                          _streamChannel != null &&
-                                          _isChannelJoined
-                                      ? _sendBasicTextMessage
-                                      : null,
-                                  child: const Text('7. Send Basic Message'),
-                                ),
+                            onPressed: _isTopicJoined &&
+                                    _isLoggedIn &&
+                                    _streamChannel != null &&
+                                    _isChannelJoined
+                                ? _sendBasicTextMessage
+                                : null,
+                            child: const Text('7. Send Basic Message'),
+                          ),
                           const SizedBox(height: 8),
                           ElevatedButton(
-                                  onPressed: _isTopicJoined &&
-                                          _isLoggedIn &&
-                                          _streamChannel != null &&
-                                          _isChannelJoined
-                                      ? _sendBasicBinaryMessage
-                                      : null,
-                                  child: const Text('8. Send Basic Binary Message'),
-                                ),
+                            onPressed: _isTopicJoined &&
+                                    _isLoggedIn &&
+                                    _streamChannel != null &&
+                                    _isChannelJoined
+                                ? _sendBasicBinaryMessage
+                                : null,
+                            child: const Text('8. Send Basic Binary Message'),
+                          ),
                         ],
                       ),
                     ),
